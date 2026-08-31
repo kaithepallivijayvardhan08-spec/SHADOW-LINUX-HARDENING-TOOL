@@ -1,0 +1,17 @@
+# Python junk
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+
+*.log
+logs/
+backup/
+*.backup_*
+*.meta
+*.sha256
+
+# OS junk
+Thumbs.db
+.DS_Store
+.vscode/

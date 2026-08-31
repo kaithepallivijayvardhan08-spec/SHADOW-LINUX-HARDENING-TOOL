@@ -1,0 +1,719 @@
+{
+  "version": "1.0.0",
+  "created": "2025-01-15T00:00:00Z",
+  "last_updated": "2025-01-15T00:00:00Z",
+  "description": "Known safe system state baseline for Shadow comparison",
+  
+  "metadata": {
+    "baseline_id": "BL-2024-001",
+    "compliance": ["CIS", "PCI-DSS", "NIST"],
+    "environment": "production"
+  },
+  
+  "system": {
+    "hostname": "localhost",
+    "os": {
+      "name": "Ubuntu",
+      "version": "22.04",
+      "kernel": "5.15.0-100-generic"
+    },
+    "architecture": "x86_64"
+  },
+  
+  "users": {
+    "system_users": [
+      "root",
+      "daemon",
+      "bin",
+      "sys",
+      "sync",
+      "games",
+      "man",
+      "lp",
+      "mail",
+      "news",
+      "uucp",
+      "proxy",
+      "www-data",
+      "backup",
+      "list",
+      "irc",
+      "gnats",
+      "nobody",
+      "systemd-network",
+      "systemd-resolve",
+      "messagebus",
+      "syslog",
+      "whoopsie",
+      "avahi",
+      "cups-pk-helper",
+      "rtkit",
+      "usbmux",
+      "dnsmasq",
+      "sshd",
+      "systemd-timesync",
+      "systemd-coredump",
+      "polkitd",
+      "tss",
+      "gdm"
+    ],
+    "admin_users": [
+      "vijay"
+    ],
+    "uid0_users": [
+      "root"
+    ],
+    "users_with_shell": [
+      "root",
+      "vijay"
+    ],
+    "users_without_password": [],
+    "locked_accounts": [],
+    "expired_accounts": []
+  },
+  
+  "groups": {
+    "admin_groups": [
+      "sudo",
+      "admin",
+      "wheel"
+    ],
+    "system_groups": [
+      "root",
+      "daemon",
+      "bin",
+      "sys",
+      "adm",
+      "tty",
+      "disk",
+      "lp",
+      "mail",
+      "news",
+      "uucp",
+      "man",
+      "proxy",
+      "kmem",
+      "dialout",
+      "fax",
+      "voice",
+      "cdrom",
+      "floppy",
+      "tape",
+      "sudo",
+      "audio",
+      "dip",
+      "video",
+      "utmp",
+      "netdev"
+    ]
+  },
+  
+  "network": {
+    "open_ports": [
+      {
+        "port": 22,
+        "protocol": "tcp",
+        "service": "ssh",
+        "description": "SSH - Secure Shell",
+        "expected": true
+      },
+      {
+        "port": 80,
+        "protocol": "tcp",
+        "service": "http",
+        "description": "HTTP - Web Server",
+        "expected": false
+      },
+      {
+        "port": 443,
+        "protocol": "tcp",
+        "service": "https",
+        "description": "HTTPS - Secure Web Server",
+        "expected": false
+      },
+      {
+        "port": 53,
+        "protocol": "tcp",
+        "service": "dns",
+        "description": "DNS - Domain Name System",
+        "expected": false
+      },
+      {
+        "port": 53,
+        "protocol": "udp",
+        "service": "dns",
+        "description": "DNS - Domain Name System",
+        "expected": false
+      }
+    ],
+    "blocked_ports": [
+      {
+        "port": 23,
+        "protocol": "tcp",
+        "service": "telnet",
+        "reason": "Insecure - transmits credentials in plaintext",
+        "severity": "critical"
+      },
+      {
+        "port": 21,
+        "protocol": "tcp",
+        "service": "ftp",
+        "reason": "Insecure - transmits credentials in plaintext",
+        "severity": "high"
+      },
+      {
+        "port": 111,
+        "protocol": "tcp",
+        "service": "rpcbind",
+        "reason": "Potential security risk",
+        "severity": "medium"
+      },
+      {
+        "port": 2049,
+        "protocol": "tcp",
+        "service": "nfs",
+        "reason": "NFS should be secured",
+        "severity": "high"
+      },
+      {
+        "port": 25,
+        "protocol": "tcp",
+        "service": "smtp",
+        "reason": "SMTP should be secured or disabled",
+        "severity": "medium"
+      },
+      {
+        "port": 137,
+        "protocol": "udp",
+        "service": "netbios-ns",
+        "reason": "NetBIOS should be disabled",
+        "severity": "medium"
+      },
+      {
+        "port": 138,
+        "protocol": "udp",
+        "service": "netbios-dgm",
+        "reason": "NetBIOS should be disabled",
+        "severity": "medium"
+      },
+      {
+        "port": 139,
+        "protocol": "tcp",
+        "service": "netbios-ssn",
+        "reason": "NetBIOS should be disabled",
+        "severity": "medium"
+      },
+      {
+        "port": 445,
+        "protocol": "tcp",
+        "service": "smb",
+        "reason": "SMB should be secured or disabled",
+        "severity": "high"
+      }
+    ],
+    "dns_servers": [
+      {
+        "server": "8.8.8.8",
+        "type": "primary",
+        "provider": "Google"
+      },
+      {
+        "server": "1.1.1.1",
+        "type": "secondary",
+        "provider": "Cloudflare"
+      }
+    ],
+    "firewall": {
+      "active": true,
+      "default_policy": "deny",
+      "logging": true,
+      "rules": [
+        {
+          "action": "allow",
+          "port": 22,
+          "protocol": "tcp",
+          "source": "any",
+          "description": "SSH"
+        }
+      ]
+    },
+    "interfaces": {
+      "lo": {
+        "ip": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "expected": true
+      },
+      "eth0": {
+        "ip": "192.168.1.100",
+        "netmask": "255.255.255.0",
+        "expected": true
+      }
+    }
+  },
+  
+  "services": {
+    "enabled": [
+      "ssh",
+      "cron",
+      "rsyslog",
+      "systemd-logind",
+      "systemd-journald",
+      "systemd-networkd",
+      "systemd-resolved",
+      "dbus"
+    ],
+    "disabled": [
+      "telnet",
+      "ftp",
+      "rlogin",
+      "rsh",
+      "rexec",
+      "chargen",
+      "daytime",
+      "echo",
+      "finger",
+      "talk",
+      "ntalk"
+    ],
+    "masked": [
+      "telnet",
+      "rlogin",
+      "rsh"
+    ],
+    "web_servers": [],
+    "database_servers": [],
+    "container_runtime": null,
+    "running": [
+      "ssh",
+      "cron",
+      "rsyslog",
+      "systemd-logind"
+    ]
+  },
+  
+  "filesystem": {
+    "critical_files": {
+      "/etc/passwd": {
+        "permissions": "644",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/shadow": {
+        "permissions": "600",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/sudoers": {
+        "permissions": "440",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/ssh/sshd_config": {
+        "permissions": "600",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/login.defs": {
+        "permissions": "644",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/hosts": {
+        "permissions": "644",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/resolv.conf": {
+        "permissions": "644",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/fstab": {
+        "permissions": "644",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/crontab": {
+        "permissions": "600",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/sysctl.conf": {
+        "permissions": "644",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/group": {
+        "permissions": "644",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/gshadow": {
+        "permissions": "600",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/security/pwquality.conf": {
+        "permissions": "644",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      },
+      "/etc/audit/auditd.conf": {
+        "permissions": "600",
+        "owner": "root",
+        "group": "root",
+        "hash": "",
+        "size": 0,
+        "mtime": ""
+      }
+    },
+    "secure_mounts": {
+      "/tmp": {
+        "options": ["nosuid", "noexec", "nodev"],
+        "sticky_bit": true,
+        "expected": true
+      },
+      "/var/tmp": {
+        "options": ["nosuid", "noexec", "nodev"],
+        "sticky_bit": true,
+        "expected": true
+      },
+      "/dev/shm": {
+        "options": ["nosuid", "noexec", "nodev"],
+        "sticky_bit": false,
+        "expected": true
+      },
+      "/home": {
+        "options": ["nosuid"],
+        "sticky_bit": false,
+        "expected": true
+      }
+    },
+    "world_writable_dirs": [],
+    "world_writable_files": [],
+    "suid_binaries": [
+      {
+        "path": "/usr/bin/passwd",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      },
+      {
+        "path": "/usr/bin/sudo",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      },
+      {
+        "path": "/usr/bin/gpasswd",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      },
+      {
+        "path": "/usr/bin/chsh",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      },
+      {
+        "path": "/usr/bin/chfn",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      },
+      {
+        "path": "/usr/bin/mount",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      },
+      {
+        "path": "/usr/bin/umount",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      },
+      {
+        "path": "/usr/bin/newgrp",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      }
+    ],
+    "sgid_binaries": [
+      {
+        "path": "/usr/bin/wall",
+        "owner": "root",
+        "group": "tty",
+        "expected": true
+      },
+      {
+        "path": "/usr/bin/chage",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      },
+      {
+        "path": "/usr/bin/expiry",
+        "owner": "root",
+        "group": "root",
+        "expected": true
+      }
+    ]
+  },
+  
+  "security": {
+    "ssh": {
+      "PermitRootLogin": "no",
+      "MaxAuthTries": 3,
+      "Protocol": 2,
+      "PasswordAuthentication": "yes",
+      "ChallengeResponseAuthentication": "no",
+      "X11Forwarding": "no",
+      "ClientAliveInterval": 300,
+      "ClientAliveCountMax": 3,
+      "LoginGraceTime": 30,
+      "MaxSessions": 10
+    },
+    "password": {
+      "min_length": 8,
+      "max_age": 90,
+      "min_age": 1,
+      "warn_age": 7,
+      "history": 5,
+      "max_attempts": 3,
+      "lockout_time": 600,
+      "complexity": true,
+      "require_upper": true,
+      "require_lower": true,
+      "require_digit": true,
+      "require_special": true
+    },
+    "kernel": {
+      "ip_forward": 0,
+      "source_route": 0,
+      "icmp_redirect": 0,
+      "magic_sysrq": 0,
+      "core_dump": 0,
+      "tcp_syncookies": 1,
+      "rp_filter": 1
+    },
+    "audit": {
+      "enabled": true,
+      "log_retention_days": 30,
+      "rules": [
+        "identity",
+        "time",
+        "user_management"
+      ]
+    },
+    "selinux": {
+      "enabled": false,
+      "mode": "disabled",
+      "policy": "targeted"
+    },
+    "apparmor": {
+      "enabled": true,
+      "profiles_loaded": 0,
+      "profiles_enforced": 0,
+      "expected_profiles": [
+        "docker-default",
+        "usr.sbin.nginx",
+        "usr.sbin.apache2"
+      ]
+    }
+  },
+  
+  "updates": {
+    "unattended_upgrades": {
+      "enabled": true,
+      "auto_reboot": false,
+      "allowed_origins": [
+        "${distro_id}:${distro_codename}-security",
+        "${distro_id}:${distro_codename}-updates"
+      ],
+      "security_only": true
+    },
+    "last_update_check": "",
+    "pending_security_updates": 0,
+    "package_manager": "apt",
+    "repositories": [
+      {
+        "name": "main",
+        "url": "http://archive.ubuntu.com/ubuntu/",
+        "enabled": true
+      }
+    ]
+  },
+  
+  "monitoring": {
+    "rsyslog": {
+      "enabled": true,
+      "remote_logging": false,
+      "log_server": ""
+    },
+    "logrotate": {
+      "configured": true,
+      "max_log_size": "50M",
+      "rotation_count": 5
+    },
+    "journald": {
+      "persistent": true,
+      "max_size": "100M",
+      "retention_days": 30
+    },
+    "auditd": {
+      "enabled": true,
+      "max_log_file": 50,
+      "max_log_file_action": "rotate",
+      "num_logs": 5
+    }
+  },
+  
+  "processes": {
+    "resource_limits": {
+      "max_user_processes": 10000,
+      "max_user_files": 65536,
+      "core_dump_limit": 0
+    },
+    "expected_processes": [
+      "systemd",
+      "init",
+      "sshd",
+      "cron",
+      "rsyslogd",
+      "auditd",
+      "systemd-journald"
+    ],
+    "suspicious_processes": [],
+    "max_cpu_threshold": 100,
+    "max_memory_threshold": 80
+  },
+  
+  "storage": {
+    "disk_usage": {
+      "root": {
+        "usage_percent": 0,
+        "threshold_warn": 80,
+        "threshold_critical": 90
+      },
+      "var": {
+        "usage_percent": 0,
+        "threshold_warn": 80,
+        "threshold_critical": 90
+      }
+    },
+    "encryption": {
+      "enabled": false,
+      "encrypted_partitions": []
+    },
+    "lvm": {
+      "enabled": false,
+      "snapshots": []
+    }
+  },
+  
+  "scheduled_tasks": {
+    "cron": {
+      "enabled": true,
+      "secure_permissions": true,
+      "cron_allow_exists": true,
+      "system_crontab": "/etc/crontab",
+      "user_crontabs": []
+    },
+    "systemd_timers": {
+      "enabled": true,
+      "timers": [
+        {
+          "name": "shadow-scan.timer",
+          "description": "Daily security scan",
+          "enabled": false
+        }
+      ]
+    },
+    "startup_jobs": {
+      "/etc/rc.local": {
+        "enabled": false,
+        "content": ""
+      }
+    }
+  },
+  
+  "access_control": {
+    "selinux": {
+      "enabled": false,
+      "mode": "disabled",
+      "policy": "targeted",
+      "expected_mode": "enforcing"
+    },
+    "apparmor": {
+      "enabled": true,
+      "profiles_loaded": 0,
+      "profiles_enforced": 0,
+      "expected_profiles": []
+    },
+    "capabilities": {
+      "enabled": true,
+      "capability_binaries": [
+        {
+          "path": "/usr/bin/ping",
+          "capabilities": "cap_net_raw+ep"
+        }
+      ]
+    }
+  },
+  
+  "packages": {
+    "installed": [],
+    "available_updates": [],
+    "security_updates": [],
+    "package_hashes": {}
+  },
+  
+  "integrity": {
+    "file_hashes": {},
+    "last_scan": "",
+    "hash_database": "/var/lib/shadow/hash_db.json",
+    "change_database": "/var/lib/shadow/change_db.json"
+  }
+}

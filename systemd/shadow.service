@@ -1,0 +1,155 @@
+[Unit]
+Description=Shadow Linux Hardening Tool
+After=network-online.target
+Wants=network-online.target
+
+# Only run if prerequisites exist
+ConditionPathExists=/usr/local/bin/shadow
+ConditionPathExists=/etc/shadow-tool/shadow.yml
+
+# Rate limiting (prevent restart loops)
+StartLimitIntervalSec=300
+StartLimitBurst=3
+
+[Service]
+Type=oneshot
+ # ✅ FIX: Keeps status "active" after script finishes
+RemainAfterExit=yes   
+User=root
+Group=root
+WorkingDirectory=/opt/shadow
+
+# ============================================================
+# ENVIRONMENT
+# ============================================================
+Environment=PYTHONUNBUFFERED=1
+Environment=SHADOW_CONFIG=/etc/shadow-tool/shadow.yml
+Environment=SHADOW_LOG_LEVEL=INFO
+
+# ============================================================
+# EXIT CODES (Critical for Risk Reporting)
+# ============================================================
+# Shadow uses exit codes to report risk levels:
+#   0 = System is secure
+#   1 = LOW risk
+#   2 = MEDIUM risk
+#   3 = HIGH/CRITICAL risk
+# These are NOT errors — they are status reports!
+SuccessExitStatus=0 1 2 3
+
+# ============================================================
+# PRE-EXECUTION SETUP
+# ============================================================
+ExecStartPre=/bin/mkdir -p /var/log/shadow
+ExecStartPre=/bin/mkdir -p /var/backups/shadow
+ExecStartPre=/bin/chmod 750 /var/log/shadow
+ExecStartPre=/bin/chmod 750 /var/backups/shadow
+
+# ============================================================
+# MAIN COMMAND
+# ============================================================
+ExecStart=/usr/local/bin/shadow --boot
+
+# ============================================================
+# TIMEOUTS
+# ============================================================
+# 5 minutes for full scan + harden operation
+TimeoutStartSec=300
+TimeoutStopSec=30
+
+# ============================================================
+# LOGGING
+# ============================================================
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=shadow
+
+# ============================================================
+# FILE PERMISSIONS
+# ============================================================
+# 0022 = owner can write, group/others can read (needed for logs)
+UMask=0022
+
+# ============================================================
+# SECURITY HARDENING (Balanced for Functionality)
+# ============================================================
+
+# ✅ Private temp (safe isolation)
+PrivateTmp=true
+
+# ✅ Protect kernel modules (prevent malicious module loading)
+ProtectKernelModules=true
+
+# ✅ Protect control groups
+ProtectControlGroups=true
+
+# ✅ Restrict real-time scheduling
+RestrictRealtime=true
+
+# ✅ Lock personality (prevent architecture switching)
+LockPersonality=true
+
+# ✅ System call architecture
+SystemCallArchitectures=native
+
+# ❌ REMOVED: ProtectSystem=strict (blocks /etc writes needed for hardening)
+# ❌ REMOVED: ProtectKernelTunables (blocks sysctl writes)
+# ❌ REMOVED: MemoryDenyWriteExecute (breaks Python dynamic execution)
+# ❌ REMOVED: PrivateDevices (breaks /dev/null, /dev/urandom access)
+# ❌ REMOVED: NoNewPrivileges (blocks privilege escalation needed for hardening)
+# ❌ REMOVED: ProtectHome=true (may need access to user configs)
+
+# ============================================================
+# RESOURCE LIMITS
+# ============================================================
+# Increased from 256 to handle subprocess spawning
+TasksMax=512
+
+# File descriptor limit
+LimitNOFILE=8192
+
+# ============================================================
+# CAPABILITIES (Expanded for Full System Hardening)
+# ============================================================
+# These capabilities allow Shadow to:
+# - Modify user accounts (SETUID, SETGID)
+# - Change file ownership (CHOWN, FOWNER)
+# - Manage processes (KILL, SYS_PTRACE)
+# - Configure network (NET_ADMIN, NET_BIND_SERVICE)
+# - Manage system resources (SYS_ADMIN, SYS_RESOURCE)
+
+CapabilityBoundingSet=CAP_DAC_OVERRIDE CAP_CHOWN CAP_FOWNER CAP_FSETID \
+                      CAP_NET_ADMIN CAP_NET_BIND_SERVICE CAP_NET_RAW \
+                      CAP_SYS_ADMIN CAP_SYS_RESOURCE CAP_SYS_CHROOT \
+                      CAP_SETUID CAP_SETGID CAP_KILL CAP_SYS_PTRACE \
+                      CAP_MKNOD CAP_SYS_RAWIO CAP_SYS_BOOT
+
+AmbientCapabilities=
+
+# ============================================================
+# READ/WRITE PATHS (Expanded for Full System Access)
+# ============================================================
+# Shadow needs to write to these directories during hardening:
+# - /etc (config files: passwd, shadow, sudoers, pam, ssh, etc.)
+# - /proc/sys (kernel parameters via sysctl)
+# - /var/log/shadow (logs)
+# - /var/backups/shadow (backups before changes)
+
+ReadWritePaths=/etc
+ReadWritePaths=/var/log/shadow
+ReadWritePaths=/var/backups/shadow
+ReadWritePaths=/var/lib/shadow
+ReadWritePaths=/var/spool/cron
+ReadWritePaths=/tmp
+ReadWritePaths=/var/tmp
+ReadWritePaths=/run
+ReadWritePaths=/proc/sys
+
+# ============================================================
+# ADDRESS FAMILIES (Network Operations)
+# ============================================================
+# Allow network operations (needed for package updates, DNS checks)
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK AF_PACKET
+
+[Install]
+WantedBy=multi-user.target

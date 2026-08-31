@@ -1,0 +1,71 @@
+# ============================================================
+# SHADOW LINUX HARDENING TOOL - PYTHON DEPENDENCIES
+# ============================================================
+# Install with: pip install -r requirements.txt
+# Minimum Python: 3.10+
+# ============================================================
+
+# --------------------------------------------
+# CORE DEPENDENCIES - Required
+# --------------------------------------------
+pyyaml>=6.0,<7.0               # YAML configuration parsing (required)
+requests>=2.31.0,<3.0          # HTTP requests for updates (required)
+colorama>=0.4.6,<0.5           # Terminal colors (required)
+
+# --------------------------------------------
+# REPORT GENERATION - Required
+# --------------------------------------------
+jinja2>=3.1.2,<4.0             # HTML report templating (required)
+
+# --------------------------------------------
+# PDF REPORT GENERATION - Required (with fallbacks)
+# --------------------------------------------
+# Multiple PDF engines for maximum compatibility
+weasyprint>=60.0,<65.0         # Primary PDF engine (recommended)
+reportlab>=4.0.0,<5.0          # PDF generation fallback
+pdfkit>=1.0.0,<2.0             # wkhtmltopdf wrapper (fallback)
+markdown>=3.4.0,<4.0           # Markdown rendering for reports
+tabulate>=0.9.0,<1.0           # Table formatting for reports
+
+# --------------------------------------------
+# ENHANCED FEATURES - Recommended
+# --------------------------------------------
+cryptography>=41.0.0,<44.0     # Encryption support (used by many modules)
+dnspython>=2.4.0,<3.0          # DNS checks (used by dns.py)
+psutil>=5.9.0,<6.0             # Process monitoring (used by processes modules)
+
+# --------------------------------------------
+# SECURITY MODULE DEPENDENCIES - Optional but recommended
+# --------------------------------------------
+# These are used by individual security modules
+# They will be imported only if available
+
+# --------------------------------------------
+# DEVELOPMENT DEPENDENCIES - Dev only
+# --------------------------------------------
+# pytest>=7.4.0,<8.0           # Testing framework (dev)
+# pytest-cov>=4.1.0,<5.0       # Test coverage (dev)
+# black>=23.0.0,<24.0          # Code formatter (dev)
+# flake8>=6.0.0,<7.0           # Linter (dev)
+# mypy>=1.0.0,<2.0             # Type checker (dev)
+
+# --------------------------------------------
+# INSTALLATION NOTES
+# --------------------------------------------
+# Full installation with all dependencies:
+#   pip install -r requirements.txt
+#
+# For Kali Linux (with --break-system-packages):
+#   pip install -r requirements.txt --break-system-packages
+#
+# For development:
+#   pip install -r requirements.txt[dev]
+#
+# For production, use:
+#   pip install -r requirements.txt --no-cache-dir
+
+# --------------------------------------------
+# VERSION CONSTRAINTS
+# --------------------------------------------
+# Python version: >=3.10
+# Check with: python3 --version

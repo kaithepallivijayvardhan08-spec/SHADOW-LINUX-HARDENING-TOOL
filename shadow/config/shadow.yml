@@ -1,0 +1,487 @@
+# ============================================================
+# SHADOW LINUX HARDENING TOOL - CONFIGURATION
+# ============================================================
+# Location: /etc/shadow-tool/shadow.yml
+# 
+# This file controls Shadow's behavior.
+# Set to true to enable, false to disable.
+# ============================================================
+
+# --------------------------------------------
+# METADATA
+# --------------------------------------------
+metadata:
+  version: "1.0.0"
+  schema_version: "1.0"
+  last_updated: "17-08-2026"
+  description: "Shadow Linux Hardening Tool Configuration"
+
+# --------------------------------------------
+# GENERAL SETTINGS
+# --------------------------------------------
+general:
+  # Auto-fix mode - false means only report, true means ask permission
+  auto_fix: false
+  
+  # MEDIUM FIX 1: Dry-run mode (preview changes without applying)
+  dry_run: false
+  
+  # MEDIUM FIX 2: Safe mode (skip dangerous operations)
+  safe_mode: false
+  
+  # MEDIUM FIX 3: Log level (DEBUG, INFO, WARNING, ERROR)
+  log_level: "INFO"
+  
+  # Verbose logging - more detailed logs
+  verbose: false
+  
+  # Backup before changes - always recommended
+  backup_before_fix: true
+  
+  # Maximum parallel checks (for performance)
+  max_parallel: 4
+  
+  # Timeout for operations (seconds)
+  timeout: 300
+  
+  # Force mode (bypass auto_fix check)
+  force: false
+
+# --------------------------------------------
+# MODULE ENABLED/DISABLED
+# --------------------------------------------
+modules:
+  authentication:
+    enabled: true
+    password_policy: true
+    login_protection: true
+    sudo_check: true
+    users: true
+  
+  remote_access:
+    enabled: true
+    ssh: true
+    telnet: true
+    rdp_vnc: true
+  
+  network:
+    enabled: true
+    firewall: true
+    ports: true
+    dns: true
+    connections: true
+  
+  file_security:
+    enabled: true
+    permissions: true
+    ownership: true
+    sensitive_files: true
+  
+  services:
+    enabled: true
+    apache: true
+    nginx: true
+    mysql: true
+    docker: true
+    nfs: true
+  
+  storage:
+    enabled: true
+    disk_check: true
+    lvm: true
+    encryption: true
+  
+  monitoring:
+    enabled: true
+    logs: true
+    suspicious_process: true
+    malware_scan: true
+  
+  updates:
+    enabled: true
+    package_updates: true
+    package_integrity: true
+  
+  kernel:
+    enabled: true
+    kernel_check: true
+    sysctl_security: true
+    kernel_modules: true
+  
+  processes:
+    enabled: true
+    process_audit: true
+    startup_process: true
+    resource_check: true
+  
+  audit:
+    enabled: true
+    auditd_check: true
+    audit_rules: true
+    system_events: true
+  
+  access_control:
+    enabled: true
+    selinux: true
+    apparmor: true
+    capabilities: true
+  
+  scheduled_tasks:
+    enabled: true
+    cron_check: true
+    systemd_timer: true
+    startup_jobs: true
+  
+  integrity:
+    enabled: true
+    file_integrity: true
+    hash_monitor: true
+    change_detection: true
+
+# --------------------------------------------
+# PASSWORD SECURITY SETTINGS
+# --------------------------------------------
+password:
+  # Minimum password length
+  min_length: 8
+  
+  # Maximum password age in days
+  max_age: 90
+  
+  # Minimum days between password changes
+  min_age: 1
+  
+  # Warning days before password expiry
+  warn_age: 7
+  
+  # Password history remembered (number of previous passwords)
+  history: 5
+  
+  # Complexity requirements
+  complexity: true
+  require_upper: true
+  require_lower: true
+  require_digit: true
+  require_special: true
+  
+  # Failed login lockout (YOUR FEATURE)
+  max_attempts: 3
+  lockout_time: 600  # seconds (10 minutes)
+
+# --------------------------------------------
+# SSH SETTINGS
+# --------------------------------------------
+ssh:
+  # Permit root login (false = disabled)
+  permit_root_login: false
+  
+  # Maximum authentication attempts
+  max_auth_tries: 3
+  
+  # Protocol version (should be 2)
+  protocol: 2
+  
+  # Strong ciphers to use
+  ciphers: "chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
+  
+  # Strong MACs to use
+  macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256"
+  
+  # Client keepalive interval (seconds)
+  client_alive_interval: 300
+  
+  # Client keepalive count max
+  client_alive_count_max: 3
+  
+  # Login grace time (seconds)
+  login_grace_time: 30
+  
+  # Max sessions per connection
+  max_sessions: 10
+
+# --------------------------------------------
+# FIREWALL SETTINGS
+# --------------------------------------------
+firewall:
+  # Default policy (deny/reject/allow)
+  default_policy: deny
+  
+  # Enable firewall logging
+  enable_logging: true
+  
+  # Apply basic rules (allow SSH, HTTP, HTTPS)
+  apply_basic_rules: true
+
+# --------------------------------------------
+# KERNEL SETTINGS
+# --------------------------------------------
+kernel:
+  # IP forwarding (0=disabled, 1=enabled)
+  ip_forward: 0
+  
+  # Accept source route (0=disabled)
+  source_route: 0
+  
+  # Accept ICMP redirects (0=disabled)
+  icmp_redirect: 0
+  
+  # Magic SysRq (0=disabled)
+  magic_sysrq: 0
+  
+  # Core dump pattern (empty = disabled)
+  core_pattern: "|/bin/false"
+  
+  # TCP SYN cookies (1=enabled)
+  tcp_syncookies: 1
+  
+  # Reverse path filtering (1=enabled)
+  rp_filter: 1
+
+# --------------------------------------------
+# DISK/STORAGE SETTINGS
+# --------------------------------------------
+storage:
+  # Disk usage warning threshold (percentage)
+  disk_warn_threshold: 80
+  
+  # Disk usage critical threshold (percentage)
+  disk_critical_threshold: 90
+  
+  # LVM snapshot warning threshold (percentage)
+  lvm_snapshot_warn: 80
+  
+  # LVM thin pool warning threshold (percentage)
+  thin_pool_warn: 80
+  
+  # Require encryption warning
+  require_encryption: true
+
+# --------------------------------------------
+# AUDIT SETTINGS
+# --------------------------------------------
+audit:
+  # Enable auditd
+  enable_auditd: true
+  
+  # Log retention days
+  log_retention_days: 30
+  
+  # Essential audit rules
+  essential_rules:
+    - identity    # /etc/passwd, /etc/shadow, /etc/sudoers
+    - time        # adjtimex, settimeofday
+    - user_management  # useradd, userdel
+
+# --------------------------------------------
+# UPDATES SETTINGS
+# --------------------------------------------
+updates:
+  # Check for package updates
+  check_updates: true
+  
+  # Check for security updates only
+  security_updates_only: false
+  
+  # Package manager (auto-detect if empty)
+  package_manager: ""
+  
+  # Offline mode (skip network operations)
+  offline: false
+
+# --------------------------------------------
+# INTEGRITY SETTINGS
+# --------------------------------------------
+integrity:
+  # Enable file integrity checks
+  enable_integrity: true
+  
+  # AIDE check (if installed)
+  aide_check: true
+  
+  # Hash monitoring
+  hash_monitoring: true
+  
+  # Change detection
+  change_detection: false
+  
+  # Sensitive directories to monitor
+  sensitive_dirs:
+    - "/etc"
+    - "/bin"
+    - "/sbin"
+    - "/usr/bin"
+    - "/usr/sbin"
+    - "/lib"
+    - "/lib64"
+    - "/opt"
+    - "/root"
+  
+  # Schedule integrity checks
+  schedule_checks: true
+
+# --------------------------------------------
+# PROCESSES SETTINGS
+# --------------------------------------------
+processes:
+  # Monitor high CPU processes
+  high_cpu_threshold: 100  # percentage
+  
+  # Monitor high memory processes
+  high_memory_threshold: 30  # percentage
+  
+  # Check processes from /tmp
+  check_temp_processes: true
+  
+  # Check hidden processes
+  check_hidden_processes: true
+  
+  # Kill zombie processes
+  kill_zombies: false
+
+# --------------------------------------------
+# ACCESS CONTROL SETTINGS
+# --------------------------------------------
+access_control:
+  # SELinux mode (enforcing/permissive/disabled)
+  selinux_mode: "enforcing"
+  
+  # AppArmor enabled
+  apparmor_enabled: true
+  
+  # Check capabilities
+  check_capabilities: true
+  
+  # Remove dangerous capabilities
+  remove_dangerous_caps: true
+
+# --------------------------------------------
+# SCHEDULED TASKS SETTINGS
+# --------------------------------------------
+scheduled_tasks:
+  # Check cron jobs
+  check_cron: true
+  
+  # Check systemd timers
+  check_systemd_timers: true
+  
+  # Check startup jobs
+  check_startup_jobs: true
+  
+  # Fix cron permissions
+  fix_cron_permissions: true
+  
+  # Remove suspicious cron entries
+  remove_suspicious_cron: true
+  
+  # Fix failed systemd timers
+  fix_failed_timers: true
+
+# --------------------------------------------
+# LOGGING SETTINGS
+# --------------------------------------------
+logging:
+  # Enable rsyslog
+  enable_rsyslog: true
+  
+  # Enable auditd
+  enable_auditd: true
+  
+  # Log rotation days
+  rotate_days: 30
+  
+  # Log file permissions
+  log_permissions: "640"
+
+# --------------------------------------------
+# DOCKER SETTINGS
+# --------------------------------------------
+docker:
+  # Enable user namespace remapping
+  enable_user_ns: true
+  
+  # Enable live restore
+  enable_live_restore: true
+  
+  # Configure logging
+  configure_logging: true
+  
+  # Log driver
+  log_driver: "json-file"
+  
+  # Log options
+  log_opts:
+    max_size: "10m"
+    max_file: "3"
+  
+  # Remove privileged containers
+  remove_privileged: false
+
+# --------------------------------------------
+# REPORTING SETTINGS
+# --------------------------------------------
+reporting:
+  # Generate terminal report
+  terminal: true
+  
+  # Generate JSON report
+  json: true
+  
+  # Generate HTML report
+  html: true
+  
+  # Generate PDF report
+  pdf: true
+  
+  # Save reports to /var/log/shadow/reports/
+  save: true
+  
+  # MEDIUM FIX 4: Report retention (number of reports to keep)
+  retention_count: 30
+  
+  # Report retention (days)
+  retention_days: 90
+
+# --------------------------------------------
+# BACKUP SETTINGS
+# --------------------------------------------
+backup:
+  # Enable backups
+  enabled: true
+  
+  # Backup location
+  location: "/var/backups/shadow/"
+  
+  # Maximum number of backups to keep
+  max_backups: 10
+  
+  # Backup retention days
+  retention_days: 30
+
+# --------------------------------------------
+# NOTIFICATION SETTINGS
+# --------------------------------------------
+notifications:
+  # Enable notifications
+  enabled: false
+  
+  # Email notifications (if configured)
+  email: ""
+  
+  # Slack webhook (if configured)
+  slack_webhook: ""
+
+# --------------------------------------------
+# EXCLUSION SETTINGS
+# --------------------------------------------
+exclusions:
+  # Files to exclude from scanning
+  files: []
+  
+  # Directories to exclude from scanning
+  directories: []
+  
+  # Users to exclude from scanning
+  users: []
+  
+  # Services to exclude from scanning
+  services: []

@@ -1,0 +1,134 @@
+SHADOW Custom Source-Available License (CSAL)
+Version 1.0, August 2026
+
+Copyright (c) 2026 KAITHEPALLI VIJAY VARDHAN
+All Rights Reserved.
+
+Project:    SHADOW Linux Hardening Tool
+Author:     KAITHEPALLI VIJAY VARDHAN
+Context:    Short-Term Internship in Cyber Defense & Security Analysis
+Year:       2026
+
+========================================================================
+PREAMBLE
+========================================================================
+This License is designed to protect the intellectual property of the
+Original Author while allowing the cybersecurity community to study,
+learn from, and use this Software for educational and non-commercial
+purposes. It explicitly forbids plagiarism, unauthorized commercial
+exploitation, and removal of attribution.
+
+========================================================================
+1. GRANT OF LICENSE
+========================================================================
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software for EDUCATIONAL, ACADEMIC,
+RESEARCH, and PERSONAL USE, subject to the following conditions.
+
+You may:
+  - View and study the source code.
+  - Modify the code for personal learning or academic projects.
+  - Use the tool to harden personal systems or virtual machines.
+  - Fork the repository on GitHub for contribution purposes.
+
+========================================================================
+2. MANDATORY CONDITIONS (YOU MUST FOLLOW THESE)
+========================================================================
+
+A. ATTRIBUTION (GIVE CREDIT)
+   The Original Author's name "KAITHEPALLI VIJAY VARDHAN" and the
+   project name "SHADOW Linux Hardening Tool" MUST remain clearly
+   visible in ALL copies, modifications, or distributions of this
+   Software. You MUST NOT remove, hide, or obfuscate the copyright
+   headers embedded in the source code files.
+
+B. NO FALSE CLAIMS OF AUTHORSHIP
+   No person or organization may claim to be the original creator
+   of this Software. If you modify the code and distribute it, you
+   must clearly state:
+   "Modified from SHADOW Linux Hardening Tool by Kaithepalli
+   Vijay Vardhan (2026)."
+
+C. RESTRICTIONS ON COMMERCIAL USE
+   Commercial resale, licensing, or bundling of this Software (modified
+   or unmodified) into a paid product or service is STRICTLY PROHIBITED
+   without prior written permission from the Original Author.
+
+D. NO PLAGIARISM
+   Submitting this project, in whole or in significant part, as your
+   own academic work, capstone project, or internship deliverable
+   constitutes plagiarism and a violation of academic integrity policies.
+
+========================================================================
+3. DISCLAIMER OF WARRANTY
+========================================================================
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT.
+
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE.
+
+========================================================================
+4. LIMITATION OF LIABILITY (CRITICAL)
+========================================================================
+IN NO EVENT SHALL THE ORIGINAL AUTHOR (KAITHEPALLI VIJAY VARDHAN)
+BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+OR CONSEQUENTIAL DAMAGES ARISING FROM THE USE OR INABILITY TO USE
+THIS SOFTWARE.
+
+THIS INCLUDES, BUT IS NOT LIMITED TO:
+  (a) Loss of data, files, configurations, or system settings.
+  (b) System lockouts, account lockouts, or inability to log in.
+  (c) Boot failures or system instability after hardening.
+  (d) Loss of network connectivity or firewall misconfigurations.
+  (e) Service disruptions (SSH, Apache, MySQL, Docker, etc.)
+  (f) Financial losses due to system downtime.
+  (g) Security breaches that occur despite using this tool.
+  (h) Compatibility issues with specific Linux distributions.
+
+THE USER ASSUMES FULL AND SOLE RESPONSIBILITY FOR:
+  1. Creating system backups BEFORE running this tool.
+  2. Taking VM snapshots before applying hardening.
+  3. Testing in a non-production environment first.
+  4. Reviewing changes using `--dry-run` before applying.
+  5. Understanding the impact of security hardening.
+
+BY USING THIS SOFTWARE, YOU AGREE THAT THE ORIGINAL AUTHOR CANNOT
+AND WILL NOT BE HELD RESPONSIBLE FOR ANY DAMAGE, LOSS, OR DISRUPTION
+CAUSED TO YOUR SYSTEM, DATA, OR BUSINESS.
+
+========================================================================
+5. SECURITY & LEGAL DISCLAIMER
+========================================================================
+This Software is provided for educational, academic, and authorized
+security hardening purposes ONLY. It is the user's SOLE responsibility
+to ensure they have proper authorization before running this tool on
+any system.
+
+The Original Author does NOT guarantee that:
+  - All security vulnerabilities will be detected.
+  - All fixes will work on every Linux distribution.
+  - The tool will prevent all security incidents.
+  - System stability will be maintained after hardening.
+
+Unauthorized use of this tool on systems you do not own or have
+explicit permission to test is ILLEGAL and a violation of computer
+crime laws (e.g., CFAA in the US, IT Act in India).
+
+========================================================================
+AUTHOR DETAILS
+========================================================================
+  Name:        KAITHEPALLI VIJAY VARDHAN
+  Role:        Creator & Lead Developer
+  Project:     SHADOW Linux Hardening Tool
+  Domain:      Cyber Defense & Security Analysis
+  GitHub:      github.com/kaithepallivijayvardhan08-spec
+  Email:       kaithepallivijayvardhan08@gmail.com
+  Year:        2026
+
+========================================================================
+END OF LICENSE
+========================================================================
