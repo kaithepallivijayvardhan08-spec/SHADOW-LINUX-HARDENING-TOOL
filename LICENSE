@@ -1,5 +1,5 @@
-SHADOW Custom Source-Available License (CSAL)
-Version 1.0, August 2026
+SHADOW CUSTOM SOURCE-AVAILABLE LICENSE (CSAL)
+Version 1.0, September 2026
 
 Copyright (c) 2026 KAITHEPALLI VIJAY VARDHAN
 All Rights Reserved.
@@ -9,126 +9,355 @@ Author:     KAITHEPALLI VIJAY VARDHAN
 Context:    Short-Term Internship in Cyber Defense & Security Analysis
 Year:       2026
 
+
 ========================================================================
 PREAMBLE
 ========================================================================
-This License is designed to protect the intellectual property of the
-Original Author while allowing the cybersecurity community to study,
-learn from, and use this Software for educational and non-commercial
-purposes. It explicitly forbids plagiarism, unauthorized commercial
-exploitation, and removal of attribution.
+
+This License governs the use of the SHADOW Linux Hardening Tool
+("Software").
+
+The Software is the original intellectual work of KAITHEPALLI VIJAY
+VARDHAN ("Original Author").
+
+This License allows limited access to the Software for viewing,
+studying, evaluation, and personal educational learning while
+protecting the Original Author's intellectual property.
+
+UNLESS EXPRESSLY PERMITTED BY THIS LICENSE OR AUTHORIZED IN WRITING
+BY THE ORIGINAL AUTHOR, COPYING, MODIFYING, DISTRIBUTING, RESELLING,
+RE-LICENSING, FORKING, OR CREATING DERIVATIVE WORKS FROM THIS SOFTWARE
+IS PROHIBITED.
+
 
 ========================================================================
-1. GRANT OF LICENSE
-========================================================================
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software for EDUCATIONAL, ACADEMIC,
-RESEARCH, and PERSONAL USE, subject to the following conditions.
-
-You may:
-  - View and study the source code.
-  - Modify the code for personal learning or academic projects.
-  - Use the tool to harden personal systems or virtual machines.
-  - Fork the repository on GitHub for contribution purposes.
-
-========================================================================
-2. MANDATORY CONDITIONS (YOU MUST FOLLOW THESE)
+1. COPYRIGHT AND OWNERSHIP
 ========================================================================
 
-A. ATTRIBUTION (GIVE CREDIT)
-   The Original Author's name "KAITHEPALLI VIJAY VARDHAN" and the
-   project name "SHADOW Linux Hardening Tool" MUST remain clearly
-   visible in ALL copies, modifications, or distributions of this
-   Software. You MUST NOT remove, hide, or obfuscate the copyright
-   headers embedded in the source code files.
+Copyright in the Software and its original source code remains with
+the Original Author.
 
-B. NO FALSE CLAIMS OF AUTHORSHIP
-   No person or organization may claim to be the original creator
-   of this Software. If you modify the code and distribute it, you
-   must clearly state:
-   "Modified from SHADOW Linux Hardening Tool by Kaithepalli
-   Vijay Vardhan (2026)."
+Nothing in this License transfers ownership, copyright, or intellectual
+property rights in the Software to any other person or organization.
 
-C. RESTRICTIONS ON COMMERCIAL USE
-   Commercial resale, licensing, or bundling of this Software (modified
-   or unmodified) into a paid product or service is STRICTLY PROHIBITED
-   without prior written permission from the Original Author.
+The Original Author retains all rights not expressly granted by this
+License.
 
-D. NO PLAGIARISM
-   Submitting this project, in whole or in significant part, as your
-   own academic work, capstone project, or internship deliverable
-   constitutes plagiarism and a violation of academic integrity policies.
 
 ========================================================================
-3. DISCLAIMER OF WARRANTY
+2. LIMITED LICENSE GRANT
 ========================================================================
+
+Subject to the terms and conditions of this License, permission is
+granted, free of charge, to any person obtaining access to the Software
+to:
+
+  - View and study the source code for educational purposes.
+  - Examine the architecture, design, and implementation for learning.
+  - Use the Software personally for educational, academic, research,
+    testing, or non-commercial purposes.
+  - Run the Software on systems or virtual machines that the user owns
+    or is authorized to administer.
+
+This License does NOT grant permission to copy, modify, distribute,
+publish, sell, sublicense, fork, or create derivative works from the
+Software except where expressly permitted below or separately
+authorized in writing by the Original Author.
+
+
+========================================================================
+3. PROHIBITED COPYING AND REPRODUCTION
+========================================================================
+
+Without prior written permission from the Original Author, you MUST NOT:
+
+  (a) Copy or reproduce the source code or substantial portions of it.
+
+  (b) Republish or upload the source code, in whole or in substantial
+      part, to another repository, website, platform, archive, or
+      distribution channel.
+
+  (c) Re-upload substantially identical copies of the Software under
+      another name.
+
+  (d) Distribute the Software or substantial portions of its source
+      code to third parties.
+
+  (e) Incorporate substantial portions of the Software into another
+      software project.
+
+  (f) Create or distribute a substantially identical replacement,
+      clone, or competing derivative based substantially on the
+      Software's source code.
+
+These restrictions apply to both modified and unmodified copies.
+
+
+========================================================================
+4. PROHIBITION ON MODIFICATION AND DERIVATIVE WORKS
+========================================================================
+
+WITHOUT PRIOR WRITTEN PERMISSION FROM THE ORIGINAL AUTHOR, NO PERSON
+OR ORGANIZATION MAY:
+
+  (a) Modify, adapt, translate, or alter the source code.
+
+  (b) Create derivative works based on the Software.
+
+  (c) Remove, replace, or substantially rewrite the Software while
+      retaining substantial portions of its original source code.
+
+  (d) Create a fork or modified repository based on the Software.
+
+  (e) Distribute, publish, or commercialize a modified version of the
+      Software.
+
+A person may inspect the source code for educational purposes, but
+inspection does not grant permission to create or distribute modified
+versions.
+
+
+========================================================================
+5. GITHUB FORKING AND REDISTRIBUTION
+========================================================================
+
+A GitHub fork, mirror, clone, re-upload, or redistribution of this
+Software is NOT automatically permitted by this License.
+
+Any fork or repository containing substantial portions of the
+Software requires prior written authorization from the Original
+Author.
+
+If GitHub or another hosting platform technically permits a user to
+fork, copy, download, or mirror the repository, such technical
+capability does not constitute permission under this License.
+
+
+========================================================================
+6. MANDATORY ATTRIBUTION
+========================================================================
+
+Any permitted copy, authorized redistribution, quotation, or approved
+use of substantial portions of the Software MUST clearly retain:
+
+  - The Original Author's name:
+    "KAITHEPALLI VIJAY VARDHAN"
+
+  - The project name:
+    "SHADOW Linux Hardening Tool"
+
+  - The original copyright notice.
+
+  - A reference to this License.
+
+Copyright headers, author information, license notices, and attribution
+information MUST NOT be removed, hidden, altered, or intentionally
+obfuscated.
+
+If written permission is granted for a modified version, the modified
+version MUST clearly state:
+
+  "Modified from SHADOW Linux Hardening Tool by
+   Kaithepalli Vijay Vardhan (2026)."
+
+The existence of modifications does not transfer original authorship
+or ownership to the person making those modifications.
+
+
+========================================================================
+7. NO FALSE CLAIMS OF AUTHORSHIP
+========================================================================
+
+No person or organization may falsely represent themselves as the
+original creator, author, or sole developer of the Software.
+
+The following actions are prohibited:
+
+  - Claiming SHADOW was originally created by another person.
+  - Removing the Original Author's name and presenting the Software
+    as independently created.
+  - Submitting substantial portions of SHADOW as another person's
+    original project.
+  - Representing a copy or unauthorized derivative as an independently
+    developed work.
+
+Modification of code, where separately authorized, does not grant
+original authorship of the underlying Software.
+
+
+========================================================================
+8. ACADEMIC AND INTERNSHIP PLAGIARISM
+========================================================================
+
+The Software MUST NOT be submitted, presented, or represented as
+another person's original academic work, capstone project, final-year
+project, internship deliverable, research project, thesis, dissertation,
+assignment, or portfolio project.
+
+Copying substantial portions of this Software and submitting them as
+one's own original work constitutes a violation of this License and
+may also constitute academic plagiarism or academic misconduct under
+the applicable institutional rules.
+
+
+========================================================================
+9. COMMERCIAL USE
+========================================================================
+
+Commercial use of the Software is NOT permitted without prior written
+permission from the Original Author.
+
+Without written permission, you MUST NOT:
+
+  - Sell the Software.
+  - Sell modified or unmodified copies.
+  - Include the Software in a paid product or service.
+  - License the Software to customers.
+  - Use substantial portions of the Software in a commercial product.
+  - Offer SHADOW or a substantially derived version as a paid service.
+
+Commercial permission, if granted, must be obtained separately in
+writing from the Original Author.
+
+
+========================================================================
+10. NO SUB-LICENSING
+========================================================================
+
+No person receiving access to the Software may grant another person
+or organization rights that are broader than the rights granted by
+this License.
+
+The Software may not be sublicensed, relicensed, or released under
+another license without prior written permission from the Original
+Author.
+
+
+========================================================================
+11. SECURITY AND AUTHORIZED USE
+========================================================================
+
+This Software is intended for educational, research, testing, and
+authorized Linux security-hardening purposes.
+
+Users are solely responsible for ensuring that they have appropriate
+authorization before running the Software on any computer, server,
+network, virtual machine, or other system.
+
+The Original Author does not authorize unauthorized access,
+unauthorized security testing, or unlawful activity.
+
+
+========================================================================
+12. DISCLAIMER OF WARRANTY
+========================================================================
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
 NONINFRINGEMENT.
 
-IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR
-OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE.
+THE ORIGINAL AUTHOR DOES NOT WARRANT THAT THE SOFTWARE WILL BE
+ERROR-FREE, SECURE, COMPATIBLE WITH EVERY LINUX DISTRIBUTION, OR
+SUITABLE FOR ANY PARTICULAR SYSTEM OR PURPOSE.
+
 
 ========================================================================
-4. LIMITATION OF LIABILITY (CRITICAL)
+13. LIMITATION OF LIABILITY
 ========================================================================
-IN NO EVENT SHALL THE ORIGINAL AUTHOR (KAITHEPALLI VIJAY VARDHAN)
-BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
-OR CONSEQUENTIAL DAMAGES ARISING FROM THE USE OR INABILITY TO USE
-THIS SOFTWARE.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL
+THE ORIGINAL AUTHOR, KAITHEPALLI VIJAY VARDHAN, BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR
+OTHER DAMAGES ARISING FROM OR RELATED TO THE USE OR INABILITY TO USE
+THE SOFTWARE.
 
 THIS INCLUDES, BUT IS NOT LIMITED TO:
-  (a) Loss of data, files, configurations, or system settings.
-  (b) System lockouts, account lockouts, or inability to log in.
-  (c) Boot failures or system instability after hardening.
-  (d) Loss of network connectivity or firewall misconfigurations.
-  (e) Service disruptions (SSH, Apache, MySQL, Docker, etc.)
-  (f) Financial losses due to system downtime.
-  (g) Security breaches that occur despite using this tool.
-  (h) Compatibility issues with specific Linux distributions.
 
-THE USER ASSUMES FULL AND SOLE RESPONSIBILITY FOR:
-  1. Creating system backups BEFORE running this tool.
-  2. Taking VM snapshots before applying hardening.
-  3. Testing in a non-production environment first.
-  4. Reviewing changes using `--dry-run` before applying.
-  5. Understanding the impact of security hardening.
+  (a) Loss or corruption of data, files, or configurations.
+  (b) System lockouts or inability to log in.
+  (c) Boot failures or system instability.
+  (d) Network connectivity failures.
+  (e) Firewall or security configuration problems.
+  (f) Service disruptions.
+  (g) Financial losses or business interruption.
+  (h) Security incidents or breaches.
+  (i) Compatibility problems with Linux distributions or hardware.
 
-BY USING THIS SOFTWARE, YOU AGREE THAT THE ORIGINAL AUTHOR CANNOT
-AND WILL NOT BE HELD RESPONSIBLE FOR ANY DAMAGE, LOSS, OR DISRUPTION
-CAUSED TO YOUR SYSTEM, DATA, OR BUSINESS.
 
 ========================================================================
-5. SECURITY & LEGAL DISCLAIMER
+14. USER RESPONSIBILITY
 ========================================================================
-This Software is provided for educational, academic, and authorized
-security hardening purposes ONLY. It is the user's SOLE responsibility
-to ensure they have proper authorization before running this tool on
-any system.
 
-The Original Author does NOT guarantee that:
-  - All security vulnerabilities will be detected.
-  - All fixes will work on every Linux distribution.
-  - The tool will prevent all security incidents.
-  - System stability will be maintained after hardening.
+Before using the Software, users are strongly responsible for:
 
-Unauthorized use of this tool on systems you do not own or have
-explicit permission to test is ILLEGAL and a violation of computer
-crime laws (e.g., CFAA in the US, IT Act in India).
+  1. Creating appropriate backups.
+  2. Taking virtual-machine snapshots where applicable.
+  3. Testing security changes in a non-production environment.
+  4. Reviewing changes before applying them.
+  5. Understanding the possible effects of system-hardening operations.
+  6. Ensuring that they have authorization to administer the target
+     system.
+
+
+========================================================================
+15. TERMINATION
+========================================================================
+
+This License automatically terminates if a person or organization
+violates any of its conditions.
+
+Upon termination, the person or organization must immediately stop
+using, copying, distributing, modifying, or otherwise exploiting the
+Software to the extent required by applicable law.
+
+Termination does not affect rights or remedies that may have already
+arisen from a violation of this License.
+
+
+========================================================================
+16. RESERVATION OF RIGHTS
+========================================================================
+
+All rights not expressly granted under this License are reserved by
+the Original Author.
+
+In particular, the Original Author reserves all rights relating to:
+
+  - Commercial licensing.
+  - Redistribution.
+  - Modification.
+  - Derivative works.
+  - Re-licensing.
+  - Incorporation into commercial products.
+  - Official distribution of modified versions.
+
+
+========================================================================
+17. WRITTEN PERMISSION
+========================================================================
+
+Any exception to this License must be expressly authorized in writing
+by the Original Author.
+
+Verbal statements, assumptions, GitHub permissions, repository access,
+or technical ability to copy the Software do not by themselves
+constitute written permission.
+
 
 ========================================================================
 AUTHOR DETAILS
 ========================================================================
-  Name:        KAITHEPALLI VIJAY VARDHAN
-  Role:        Creator & Lead Developer
-  Project:     SHADOW Linux Hardening Tool
-  Domain:      Cyber Defense & Security Analysis
-  GitHub:      github.com/kaithepallivijayvardhan08-spec
-  Email:       kaithepallivijayvardhan08@gmail.com
-  Year:        2026
+
+Name:        KAITHEPALLI VIJAY VARDHAN
+Role:        Creator & Lead Developer
+Project:     SHADOW Linux Hardening Tool
+Domain:      Cyber Defense & Security Analysis
+GitHub:      github.com/kaithepallivijayvardhan08-spec
+Email:       kaithepallivijayvardhan08@gmail.com
+Year:        2026
+
 
 ========================================================================
-END OF LICENSE
+END OF SHADOW CUSTOM SOURCE-AVAILABLE LICENSE (CSAL)
 ========================================================================
