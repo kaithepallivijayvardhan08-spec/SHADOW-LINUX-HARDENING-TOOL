@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <b>Submitted by:</b> KAITHEPALLI VIJAY VARDHAN | <b>Category:</b> Security / DevSecOps
+  <b>Created by:</b> KAITHEPALLI VIJAY VARDHAN | <b>Category:</b> Security / DevSecOps
 </p>
 
 ---
