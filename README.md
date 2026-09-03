@@ -236,7 +236,6 @@ If you want to add a new security module, fix a bug, or just study the code to l
 | **Architecture** | Modular, Object-Oriented, Transaction-Safe |
 
 ---
----
 
 ## 🔬 Independent Validation — Benchmarking Against Lynis
 
