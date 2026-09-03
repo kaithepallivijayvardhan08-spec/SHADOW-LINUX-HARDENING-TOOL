@@ -46,7 +46,7 @@ Options:
     --help          Show this help message
     --dry-run       Preview installation without making changes
     --uninstall     Remove Shadow from the system
-    --upgrade       Upgrade existing installation
+    --upgrade       Upgrade Shadow
 
 Examples:
     sudo ./setup.sh                 # Install Shadow
@@ -226,7 +226,10 @@ if [ -z "$PYTHON_CMD" ]; then
     
     # Detect OS and install Python
     if [ "$OS" = "ubuntu" ] || [ "$OS" = "debian" ] || [ "$OS" = "kali" ]; then
-        if [ "$OS" = "ubuntu" ] && [ "$VERSION" = "20.04" ] || [ "$VERSION" = "18.04" ]; then
+        # ✅ FIX 3: Corrected bash syntax and added software-properties-common
+        if [ "$OS" = "ubuntu" ] && { [ "$VERSION" = "20.04" ] || [ "$VERSION" = "18.04" ]; }; then
+            echo -e "${YELLOW}Installing software-properties-common for PPA support...${NC}"
+            apt-get install -y software-properties-common 2>/dev/null || true
             echo -e "${YELLOW}Adding deadsnakes PPA for Python 3.10...${NC}"
             add-apt-repository ppa:deadsnakes/ppa -y
             apt-get update -qq
@@ -435,12 +438,11 @@ fi
 # Set permissions for config
 chmod 600 /etc/shadow-tool/shadow.yml
 
-# REMOVE old config files from other locations
+# ✅ FIX 1: ONLY remove config from the installation directory, NEVER the source directory
 rm -f /opt/shadow/shadow/config/shadow.yml 2>/dev/null || true
-rm -f "$SCRIPT_DIR/shadow/config/shadow.yml" 2>/dev/null || true
 
 echo -e "${GREEN}Configuration installed at /etc/shadow-tool/shadow.yml${NC}"
-echo -e "${GREEN}Old config files removed${NC}"
+echo -e "${GREEN}Old config files removed from installation directory${NC}"
 
 # ============================================================
 # ✅ FIX 2: INSTALL SYSTEM DEPENDENCIES FOR PDF (WEASYPRINT)
@@ -500,17 +502,19 @@ echo -e "${YELLOW}Installing systemd service...${NC}"
 if [ -f "$SCRIPT_DIR/systemd/shadow.service" ]; then
     cp "$SCRIPT_DIR/systemd/shadow.service" /etc/systemd/system/shadow.service
 else
+    # ✅ FIX 2: Corrected fallback systemd service to allow /etc writes and remain active
     cat > /etc/systemd/system/shadow.service << 'EOF'
 [Unit]
 Description=Shadow Linux Hardening Tool
-After=network.target
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=oneshot
+RemainAfterExit=yes
 ExecStart=/usr/local/bin/shadow --boot
-PrivateTmp=true
-ProtectSystem=strict
-NoNewPrivileges=true
+# Note: ProtectSystem and NoNewPrivileges are intentionally omitted
+# because SHADOW requires write access to /etc and /proc to harden the OS.
 
 [Install]
 WantedBy=multi-user.target
