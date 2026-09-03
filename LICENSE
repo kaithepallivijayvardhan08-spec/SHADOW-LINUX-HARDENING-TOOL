@@ -1,5 +1,6 @@
 SHADOW CUSTOM SOURCE-AVAILABLE LICENSE (CSAL)
-Version 1.0, September 2026
+Version 2.0 (Master Protection & Professional Evaluation Edition)
+September 2026
 
 Copyright (c) 2026 KAITHEPALLI VIJAY VARDHAN
 All Rights Reserved.
@@ -9,355 +10,163 @@ Author:     KAITHEPALLI VIJAY VARDHAN
 Context:    Short-Term Internship in Cyber Defense & Security Analysis
 Year:       2026
 
-
 ========================================================================
 PREAMBLE
 ========================================================================
-
 This License governs the use of the SHADOW Linux Hardening Tool
-("Software").
+("Software"). The Software is the original intellectual work of 
+KAITHEPALLI VIJAY VARDHAN ("Original Author"). 
 
-The Software is the original intellectual work of KAITHEPALLI VIJAY
-VARDHAN ("Original Author").
-
-This License allows limited access to the Software for viewing,
-studying, evaluation, and personal educational learning while
-protecting the Original Author's intellectual property.
-
-UNLESS EXPRESSLY PERMITTED BY THIS LICENSE OR AUTHORIZED IN WRITING
-BY THE ORIGINAL AUTHOR, COPYING, MODIFYING, DISTRIBUTING, RESELLING,
-RE-LICENSING, FORKING, OR CREATING DERIVATIVE WORKS FROM THIS SOFTWARE
-IS PROHIBITED.
-
+This License is designed to encourage cybersecurity professionals, 
+recruiters, and students to clone, test, and evaluate the Software, 
+while strictly protecting the Original Author's intellectual property 
+from commercial exploitation, academic plagiarism, and unauthorized 
+redistribution.
 
 ========================================================================
 1. COPYRIGHT AND OWNERSHIP
 ========================================================================
-
-Copyright in the Software and its original source code remains with
-the Original Author.
-
-Nothing in this License transfers ownership, copyright, or intellectual
-property rights in the Software to any other person or organization.
-
-The Original Author retains all rights not expressly granted by this
-License.
-
+Copyright in the Software and its original source code remains solely 
+with the Original Author. Nothing in this License transfers ownership, 
+copyright, or intellectual property rights in the Software to any other 
+person or organization. The Original Author retains all rights not 
+expressly granted by this License.
 
 ========================================================================
-2. LIMITED LICENSE GRANT
+2. PERMITTED USE (EVALUATION, TESTING & FEEDBACK)
 ========================================================================
-
-Subject to the terms and conditions of this License, permission is
-granted, free of charge, to any person obtaining access to the Software
-to:
-
-  - View and study the source code for educational purposes.
-  - Examine the architecture, design, and implementation for learning.
-  - Use the Software personally for educational, academic, research,
-    testing, or non-commercial purposes.
-  - Run the Software on systems or virtual machines that the user owns
-    or is authorized to administer.
-
-This License does NOT grant permission to copy, modify, distribute,
-publish, sell, sublicense, fork, or create derivative works from the
-Software except where expressly permitted below or separately
-authorized in writing by the Original Author.
-
+Permission is granted, free of charge, to any person obtaining access 
+to the Software to:
+  (a) Clone, download, and install the Software from the official 
+      GitHub repository.
+  (b) Run the Software on personal computers, virtual machines, home 
+      labs, or internal corporate test environments strictly for 
+      evaluation, learning, security testing, and benchmarking.
+  (c) Analyze the source code to understand the architecture, atomic 
+      transaction engine, and risk algorithms for educational purposes 
+      or recruitment evaluation.
 
 ========================================================================
-3. PROHIBITED COPYING AND REPRODUCTION
+3. GITHUB FORKING & PULL REQUESTS (EXPLICITLY PERMITTED)
 ========================================================================
+Unlike standard restrictive licenses, this License EXPLICITLY PERMITS 
+you to "Fork" the official GitHub repository solely for the purpose of:
+  (a) Testing modifications in your own GitHub environment.
+  (b) Creating patches, bug fixes, or new modules.
+  (c) Submitting "Pull Requests" (feedback) back to the Original 
+      Author's official repository.
 
-Without prior written permission from the Original Author, you MUST NOT:
-
-  (a) Copy or reproduce the source code or substantial portions of it.
-
-  (b) Republish or upload the source code, in whole or in substantial
-      part, to another repository, website, platform, archive, or
-      distribution channel.
-
-  (c) Re-upload substantially identical copies of the Software under
-      another name.
-
-  (d) Distribute the Software or substantial portions of its source
-      code to third parties.
-
-  (e) Incorporate substantial portions of the Software into another
-      software project.
-
-  (f) Create or distribute a substantially identical replacement,
-      clone, or competing derivative based substantially on the
-      Software's source code.
-
-These restrictions apply to both modified and unmodified copies.
-
+By submitting a Pull Request, you grant the Original Author a 
+perpetual, royalty-free right to use, merge, and distribute your 
+submitted code as part of the SHADOW project, while you retain 
+authorship of your specific contribution.
 
 ========================================================================
-4. PROHIBITION ON MODIFICATION AND DERIVATIVE WORKS
+4. PROHIBITED REDISTRIBUTION & COMPETING DERIVATIVES
 ========================================================================
-
-WITHOUT PRIOR WRITTEN PERMISSION FROM THE ORIGINAL AUTHOR, NO PERSON
-OR ORGANIZATION MAY:
-
-  (a) Modify, adapt, translate, or alter the source code.
-
-  (b) Create derivative works based on the Software.
-
-  (c) Remove, replace, or substantially rewrite the Software while
-      retaining substantial portions of its original source code.
-
-  (d) Create a fork or modified repository based on the Software.
-
-  (e) Distribute, publish, or commercialize a modified version of the
-      Software.
-
-A person may inspect the source code for educational purposes, but
-inspection does not grant permission to create or distribute modified
-versions.
-
+While testing and forking on GitHub for feedback is permitted, without 
+prior written permission, you MUST NOT:
+  (a) Re-upload the Software to alternative platforms, app stores, 
+      archives, or secondary websites.
+  (b) Bundle the Software into a separate distribution package or ISO.
+  (c) Fork the repository, rename the Software, remove the Author's 
+      credits, and release it as an independent, competing hardening 
+      tool or commercial product.
 
 ========================================================================
-5. GITHUB FORKING AND REDISTRIBUTION
+5. MANDATORY ATTRIBUTION & NO FALSE CLAIMS
 ========================================================================
-
-A GitHub fork, mirror, clone, re-upload, or redistribution of this
-Software is NOT automatically permitted by this License.
-
-Any fork or repository containing substantial portions of the
-Software requires prior written authorization from the Original
-Author.
-
-If GitHub or another hosting platform technically permits a user to
-fork, copy, download, or mirror the repository, such technical
-capability does not constitute permission under this License.
-
+  (a) The Original Author's name ("KAITHEPALLI VIJAY VARDHAN") and 
+      the project name ("SHADOW Linux Hardening Tool") MUST remain 
+      clearly visible in all copies, terminal outputs, and documentation.
+  (b) NO person may claim to be the original creator of this Software.
+  (c) If written permission is granted for a modified version, it must 
+      clearly state: "Modified from SHADOW Linux Hardening Tool by 
+      Kaithepalli Vijay Vardhan (2026)."
 
 ========================================================================
-6. MANDATORY ATTRIBUTION
+6. ACADEMIC AND INTERNSHIP PLAGIARISM
 ========================================================================
-
-Any permitted copy, authorized redistribution, quotation, or approved
-use of substantial portions of the Software MUST clearly retain:
-
-  - The Original Author's name:
-    "KAITHEPALLI VIJAY VARDHAN"
-
-  - The project name:
-    "SHADOW Linux Hardening Tool"
-
-  - The original copyright notice.
-
-  - A reference to this License.
-
-Copyright headers, author information, license notices, and attribution
-information MUST NOT be removed, hidden, altered, or intentionally
-obfuscated.
-
-If written permission is granted for a modified version, the modified
-version MUST clearly state:
-
-  "Modified from SHADOW Linux Hardening Tool by
-   Kaithepalli Vijay Vardhan (2026)."
-
-The existence of modifications does not transfer original authorship
-or ownership to the person making those modifications.
-
+The Software MUST NOT be submitted, presented, or represented as 
+another person's original academic work, capstone project, final-year 
+project, internship deliverable, research project, thesis, or 
+portfolio project. Copying substantial portions of this Software and 
+submitting them as one's own original work constitutes a violation of 
+this License and academic misconduct.
 
 ========================================================================
-7. NO FALSE CLAIMS OF AUTHORSHIP
+7. STRICT COMMERCIAL RESTRICTION
 ========================================================================
-
-No person or organization may falsely represent themselves as the
-original creator, author, or sole developer of the Software.
-
-The following actions are prohibited:
-
-  - Claiming SHADOW was originally created by another person.
-  - Removing the Original Author's name and presenting the Software
-    as independently created.
-  - Submitting substantial portions of SHADOW as another person's
-    original project.
-  - Representing a copy or unauthorized derivative as an independently
-    developed work.
-
-Modification of code, where separately authorized, does not grant
-original authorship of the underlying Software.
-
-
-========================================================================
-8. ACADEMIC AND INTERNSHIP PLAGIARISM
-========================================================================
-
-The Software MUST NOT be submitted, presented, or represented as
-another person's original academic work, capstone project, final-year
-project, internship deliverable, research project, thesis, dissertation,
-assignment, or portfolio project.
-
-Copying substantial portions of this Software and submitting them as
-one's own original work constitutes a violation of this License and
-may also constitute academic plagiarism or academic misconduct under
-the applicable institutional rules.
-
-
-========================================================================
-9. COMMERCIAL USE
-========================================================================
-
-Commercial use of the Software is NOT permitted without prior written
-permission from the Original Author.
-
-Without written permission, you MUST NOT:
-
-  - Sell the Software.
-  - Sell modified or unmodified copies.
-  - Include the Software in a paid product or service.
-  - License the Software to customers.
-  - Use substantial portions of the Software in a commercial product.
+Commercial use of the Software is NOT permitted without prior written 
+permission. Without written permission, you MUST NOT:
+  - Sell the Software or modified copies.
+  - Include the Software in a paid SaaS product, commercial appliance, 
+    or managed service.
   - Offer SHADOW or a substantially derived version as a paid service.
-
-Commercial permission, if granted, must be obtained separately in
-writing from the Original Author.
-
+(Internal use within a company for securing their own test servers is 
+permitted; selling the tool to external clients is not).
 
 ========================================================================
-10. NO SUB-LICENSING
+8. SECURITY AND AUTHORIZED USE DISCLAIMER
 ========================================================================
-
-No person receiving access to the Software may grant another person
-or organization rights that are broader than the rights granted by
-this License.
-
-The Software may not be sublicensed, relicensed, or released under
-another license without prior written permission from the Original
-Author.
-
+This Software modifies critical operating system configurations (PAM, 
+SSH, iptables, sysctl). Users are SOLELY responsible for ensuring they 
+have explicit authorization to run this tool on their target systems. 
+The Original Author does not authorize or condone the use of this tool 
+on systems you do not own or have permission to test.
 
 ========================================================================
-11. SECURITY AND AUTHORIZED USE
+9. DISCLAIMER OF WARRANTY
 ========================================================================
-
-This Software is intended for educational, research, testing, and
-authorized Linux security-hardening purposes.
-
-Users are solely responsible for ensuring that they have appropriate
-authorization before running the Software on any computer, server,
-network, virtual machine, or other system.
-
-The Original Author does not authorize unauthorized access,
-unauthorized security testing, or unlawful activity.
-
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND 
+NONINFRINGEMENT. THE ORIGINAL AUTHOR DOES NOT WARRANT THAT THE 
+SOFTWARE WILL BE ERROR-FREE, SECURE, OR COMPATIBLE WITH EVERY LINUX 
+DISTRIBUTION.
 
 ========================================================================
-12. DISCLAIMER OF WARRANTY
+10. LIMITATION OF LIABILITY (CRITICAL PROTECTION)
 ========================================================================
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
-NONINFRINGEMENT.
-
-THE ORIGINAL AUTHOR DOES NOT WARRANT THAT THE SOFTWARE WILL BE
-ERROR-FREE, SECURE, COMPATIBLE WITH EVERY LINUX DISTRIBUTION, OR
-SUITABLE FOR ANY PARTICULAR SYSTEM OR PURPOSE.
-
-
-========================================================================
-13. LIMITATION OF LIABILITY
-========================================================================
-
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL
-THE ORIGINAL AUTHOR, KAITHEPALLI VIJAY VARDHAN, BE LIABLE FOR ANY
-DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR
-OTHER DAMAGES ARISING FROM OR RELATED TO THE USE OR INABILITY TO USE
-THE SOFTWARE.
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL 
+THE ORIGINAL AUTHOR, KAITHEPALLI VIJAY VARDHAN, BE LIABLE FOR ANY 
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR 
+OTHER DAMAGES ARISING FROM OR RELATED TO THE USE OF THIS SOFTWARE.
 
 THIS INCLUDES, BUT IS NOT LIMITED TO:
-
   (a) Loss or corruption of data, files, or configurations.
   (b) System lockouts or inability to log in.
   (c) Boot failures or system instability.
-  (d) Network connectivity failures.
-  (e) Firewall or security configuration problems.
-  (f) Service disruptions.
-  (g) Financial losses or business interruption.
-  (h) Security incidents or breaches.
-  (i) Compatibility problems with Linux distributions or hardware.
+  (d) Network connectivity failures or firewall misconfigurations.
+  (e) Service disruptions (Apache, MySQL, Docker, etc.).
+  (f) Financial losses or business interruption.
+  (g) Security incidents or breaches.
+  (h) Compatibility problems with Linux distributions or hardware.
 
-
-========================================================================
-14. USER RESPONSIBILITY
-========================================================================
-
-Before using the Software, users are strongly responsible for:
-
-  1. Creating appropriate backups.
-  2. Taking virtual-machine snapshots where applicable.
-  3. Testing security changes in a non-production environment.
-  4. Reviewing changes before applying them.
-  5. Understanding the possible effects of system-hardening operations.
-  6. Ensuring that they have authorization to administer the target
-     system.
-
+THE USER ASSUMES FULL RESPONSIBILITY FOR CREATING BACKUPS AND VM 
+SNAPSHOTS BEFORE EXECUTION.
 
 ========================================================================
-15. TERMINATION
+11. TERMINATION & GOVERNING LAW
 ========================================================================
-
-This License automatically terminates if a person or organization
-violates any of its conditions.
-
-Upon termination, the person or organization must immediately stop
-using, copying, distributing, modifying, or otherwise exploiting the
-Software to the extent required by applicable law.
-
-Termination does not affect rights or remedies that may have already
-arisen from a violation of this License.
-
+This License automatically terminates if a person or organization 
+violates any of its conditions. Upon termination, they must immediately 
+stop using, copying, distributing, or modifying the Software. This 
+License is governed by the laws of India.
 
 ========================================================================
-16. RESERVATION OF RIGHTS
+AUTHOR DETAILS & COMMERCIAL LICENSING CONTACT
 ========================================================================
-
-All rights not expressly granted under this License are reserved by
-the Original Author.
-
-In particular, the Original Author reserves all rights relating to:
-
-  - Commercial licensing.
-  - Redistribution.
-  - Modification.
-  - Derivative works.
-  - Re-licensing.
-  - Incorporation into commercial products.
-  - Official distribution of modified versions.
-
-
-========================================================================
-17. WRITTEN PERMISSION
-========================================================================
-
-Any exception to this License must be expressly authorized in writing
-by the Original Author.
-
-Verbal statements, assumptions, GitHub permissions, repository access,
-or technical ability to copy the Software do not by themselves
-constitute written permission.
-
-
-========================================================================
-AUTHOR DETAILS
-========================================================================
-
 Name:        KAITHEPALLI VIJAY VARDHAN
-Role:        Creator & Lead Developer
+Role:        Creator, Systems Architect & Lead Developer
 Project:     SHADOW Linux Hardening Tool
 Domain:      Cyber Defense & Security Analysis
 GitHub:      github.com/kaithepallivijayvardhan08-spec
 Email:       kaithepallivijayvardhan08@gmail.com
-Year:        2026
 
+For commercial licensing, enterprise deployments, or royalty 
+agreements, please contact the Author directly via email.
 
 ========================================================================
-END OF SHADOW CUSTOM SOURCE-AVAILABLE LICENSE (CSAL)
+END OF SHADOW CUSTOM SOURCE-AVAILABLE LICENSE (CSAL v2.0)
 ========================================================================
