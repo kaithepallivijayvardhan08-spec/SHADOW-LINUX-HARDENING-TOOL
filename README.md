@@ -296,9 +296,6 @@ I built SHADOW because I fell in love with how Linux actually works under the ho
 
 If you are a security professional reading this: **please break my tool.** Open an issue, critique the architecture, tell me what I got wrong. Every piece of harsh feedback is a lesson I cannot get from a textbook.
 
-— **KAITHEPALLI VIJAY VARDHAN**
-*B.Tech CSE · Cyber Defense & Security Analysis intern*
-📧 kaithepallivijayvardhan08@gmail.com · 🐙 github.com/kaithepallivijayvardhan08-spec
 ## 👤 About the Author & My Cybersecurity Journey
 
 **KAITHEPALLI VIJAY VARDHAN**  
